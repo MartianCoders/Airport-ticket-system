@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.gui.ControllerMain">
+   <children>
+      <SplitPane dividerPositions="0.16838961274994918" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="859.0" style="-fx-border-color: #14248A;">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="111.0" style="-fx-background-color: #14248A; -fx-border-color: #14248A;">
+               <children>
+                  <Button fx:id="buttonFlight" layoutX="30.0" layoutY="58.0" mnemonicParsing="false" onAction="#mouseClickFlight" onMouseExited="#mouseExitFlight" onMouseMoved="#mouseHoverFlight" style="-fx-background-color: transparent;" text="Flights" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect></Button>
+                  <Button fx:id="buttonTickets" layoutX="31.0" layoutY="127.0" mnemonicParsing="false" onAction="#mouseClickTickets" onMouseExited="#mouseExitTickets" onMouseMoved="#mouseHoverTickets" style="-fx-background-color: transparent;" text="Tickets" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="403.0" prefWidth="522.0">
+               <children>
+                  <AnchorPane fx:id="paneFlights" prefHeight="399.0" prefWidth="708.0">
+                     <children>
+                        <TableView fx:id="listFlights" onMouseClicked="#mouseClickRow">
+                          <columns>
+                              <TableColumn fx:id="flightID" editable="false" minWidth="0.0" prefWidth="31.46215659379959" text="ID" />
+                            <TableColumn fx:id="destination" editable="false" prefWidth="110.52099227905273" text="Destination" />
+                            <TableColumn fx:id="date" editable="false" prefWidth="113.74794006347656" text="Date" />
+                              <TableColumn fx:id="airport" editable="false" prefWidth="75.0" text="Airport" />
+                              <TableColumn fx:id="seats" editable="false" prefWidth="58.084014892578125" text="Seats" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="inputDestinatie" alignment="CENTER" layoutX="497.0" layoutY="35.0" prefHeight="32.0" prefWidth="165.0" promptText="Destinatie" />
+                        <TextField fx:id="inputData" alignment="CENTER" layoutX="497.0" layoutY="67.0" prefHeight="32.0" prefWidth="165.0" promptText="(AAAA-MM-DD)" />
+                        <Text layoutX="536.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cautati dupa:" wrappingWidth="105.23522186279297">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Button fx:id="buttonSearchFlight" layoutX="543.0" layoutY="110.0" mnemonicParsing="false" onAction="#mouseClickSearchFlight" onMouseExited="#mouseExitSearchFlight" onMouseMoved="#mouseHoverSearchFlight" prefHeight="32.0" prefWidth="73.0" style="-fx-background-color: #16BAC5;" text="Search" textFill="WHITE" />
+                        <Button fx:id="buttonAddTicket" layoutX="527.0" layoutY="353.0" mnemonicParsing="false" onAction="#mouseClickAddTicket" onMouseExited="#mouseExitSearchFlight" onMouseMoved="#mouseHoverSearchFlight" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #16BAC5;" text="Add Ticket" textFill="WHITE" />
+                        <Text layoutX="449.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="flightID" />
+                        <TextField fx:id="inputNameTicket" alignment="CENTER" layoutX="497.0" layoutY="184.0" prefHeight="32.0" prefWidth="165.0" promptText="Name" />
+                        <TextField fx:id="inputPeopleTicket" alignment="CENTER" layoutX="497.0" layoutY="216.0" prefHeight="32.0" prefWidth="165.0" promptText="People" />
+                        <TextField fx:id="inputAdressTicket" alignment="CENTER" layoutX="497.0" layoutY="248.0" prefHeight="32.0" prefWidth="165.0" promptText="Adress" />
+                        <TextField fx:id="inputSeatsTicket" alignment="CENTER" layoutX="497.0" layoutY="280.0" prefHeight="32.0" prefWidth="165.0" promptText="Seats" />
+                        <Text layoutX="454.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seats" />
+                        <Text layoutX="450.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress" />
+                        <Text layoutX="450.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="People" />
+                        <Text layoutX="452.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <TextField fx:id="flightIDTextLabel" alignment="CENTER" layoutX="497.0" layoutY="312.0" prefHeight="32.0" prefWidth="165.0" promptText="Flight">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="434.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destinatie" />
+                        <Text layoutX="463.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" />
+                        <Text layoutX="530.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adauga bilet:" wrappingWidth="105.23522186279297">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneTickets" prefHeight="399.0" prefWidth="451.0">
+                     <children>
+                        <TableView fx:id="listTickets" prefHeight="399.0" prefWidth="446.0">
+                           <columns>
+                              <TableColumn fx:id="ticketID" editable="false" minWidth="0.0" prefWidth="31.46215659379959" text="ID" />
+                              <TableColumn fx:id="name" editable="false" prefWidth="110.52099227905273" text="Name" />
+                              <TableColumn fx:id="people" editable="false" prefWidth="113.74794006347656" text="People" />
+                              <TableColumn fx:id="adress" editable="false" prefWidth="75.0" text="Adress" />
+                              <TableColumn fx:id="seatsTicket" editable="false" prefWidth="58.084014892578125" text="Seats" />
+                              <TableColumn fx:id="flightIDTickets" prefWidth="52.43701171875" text="FlghtID" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
